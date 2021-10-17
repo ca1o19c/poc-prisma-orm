@@ -8,7 +8,16 @@ generator client {
 }
 
 model users {
-  id String @id @default(uuid())
+  id String @id
   name String
   email String?
+
+  group groups[]
+}
+
+model groups{
+  id String @id
+  title String
+
+  members users[]
 }
